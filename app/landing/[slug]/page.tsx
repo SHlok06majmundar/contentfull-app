@@ -5,13 +5,15 @@ import { Navigation } from '../../../components/layout/Navigation';
 import { HeroBlock } from '../../../components/blocks/HeroBlock';
 import { TwoColumnRow } from '../../../components/blocks/TwoColumnRow';
 import { ImageGrid } from '../../../components/blocks/ImageGrid';
-import { LandingPage, ComponentConfig } from '../../../types/contentful';
+import type { LandingPage, ComponentConfig } from '../../../types/contentful';
 
-interface PageProps {
+// Define PageProps properly to work with Next.js 15.3.0 App Router
+type PageProps = {
   params: {
     slug: string;
   };
-}
+  searchParams?: Record<string, string | string[] | undefined>;
+};
 
 export async function generateStaticParams() {
   return [
@@ -23,7 +25,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   try {
-    const data = await graphqlClient.request(LANDING_PAGE_QUERY, {
+    const data: any = await graphqlClient.request(LANDING_PAGE_QUERY, {
       slug: params.slug,
     });
 
@@ -88,7 +90,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 async function getLandingPageData(slug: string) {
   try {
-    const data = await graphqlClient.request(LANDING_PAGE_QUERY, { slug });
+    const data: any = await graphqlClient.request(LANDING_PAGE_QUERY, { slug });
     return data.pageCollection?.items[0] as LandingPage;
   } catch (error) {
     console.error('Failed to fetch landing page data:', error);

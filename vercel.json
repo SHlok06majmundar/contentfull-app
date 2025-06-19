@@ -1,12 +1,17 @@
 {
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
+  "version": 2,
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NODE_ENV": "production"
   },
+  "outputDirectory": ".next",
   "functions": {
-    "api/**/*.ts": {
-      "runtime": "vercel-node@18.0.0"
+    "app/api/**/*": {
+      "memory": 1024,
+      "maxDuration": 10
     }
   }
 }

@@ -192,8 +192,22 @@ The application is optimized for:
 The application is configured for Vercel deployment:
 
 1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
+2. Add environment variables in Vercel dashboard:
+   ```
+   CONTENTFUL_SPACE_ID=your_space_id_here
+   CONTENTFUL_ACCESS_TOKEN=your_delivery_access_token_here
+   CONTENTFUL_PREVIEW_ACCESS_TOKEN=your_preview_access_token_here
+   CONTENTFUL_MANAGEMENT_TOKEN=your_management_token_here
+   NEXT_PUBLIC_SITE_URL=your_production_url_here
+   ```
 3. Deploy automatically on push to main branch
+4. Ensure your project has been built at least once locally with `npm run build` before deploying
+
+For manual deployment:
+```bash
+npm run build
+vercel --prod
+```
 
 ## 📝 Contentful Setup
 
