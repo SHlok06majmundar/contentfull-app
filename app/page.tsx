@@ -1,5 +1,6 @@
 import { Navigation } from '../components/layout/Navigation';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
@@ -14,12 +15,12 @@ export default function HomePage() {
               Build once, deploy everywhere with Contentful integration.
             </p>
             <div className={styles.links}>
-              <a href="/contentful-app" className={styles.primaryLink}>
+              <Link href="/contentful-app" className={styles.primaryLink}>
                 Open Editor
-              </a>
-              <a href="/landing/page-1" className={styles.secondaryLink}>
+              </Link>
+              <Link href="/landing/page-1" className={styles.secondaryLink}>
                 View Examples
-              </a>
+              </Link>
             </div>
             <div className={styles.features}>
               <div className={styles.feature}>

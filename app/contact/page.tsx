@@ -93,9 +93,8 @@ export default function ContactPage() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.title}>Contact Us</h1>
-            <p className={styles.subtitle}>
-              Have questions or need help? We'd love to hear from you. Fill out
+            <h1 className={styles.title}>Contact Us</h1>            <p className={styles.subtitle}>
+              Have questions or need help? We&apos;d love to hear from you. Fill out
               the form below and our team will get back to you as soon as
               possible.
             </p>

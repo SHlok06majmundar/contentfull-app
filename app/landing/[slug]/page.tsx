@@ -8,12 +8,12 @@ import { ImageGrid } from '../../../components/blocks/ImageGrid';
 import type { LandingPage, ComponentConfig } from '../../../types/contentful';
 
 // Define PageProps properly to work with Next.js 15.3.0 App Router
-type PageProps = {
+interface PageProps {
   params: {
     slug: string;
   };
   searchParams?: Record<string, string | string[] | undefined>;
-};
+}
 
 export async function generateStaticParams() {
   return [
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       slug: params.slug,
     });
 
-    const page = data.pageCollection?.items[0] as LandingPage;
+    const page = data.landingPageCollection?.items[0] as LandingPage;
 
     if (!page) {
       const mockPage = getMockData(params.slug);
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 async function getLandingPageData(slug: string) {
   try {
     const data: any = await graphqlClient.request(LANDING_PAGE_QUERY, { slug });
-    return data.pageCollection?.items[0] as LandingPage;
+    return data.landingPageCollection?.items[0] as LandingPage;
   } catch (error) {
     console.error('Failed to fetch landing page data:', error);
     return null;
@@ -360,7 +360,7 @@ function getMockData(slug: string): LandingPage | null {
   return mockData[slug] || null;
 }
 
-export default async function LandingPage({ params }: PageProps) {
+export default async function LandingPageComponent({ params }: PageProps) {
   let page = await getLandingPageData(params.slug);
   
   if (!page) {

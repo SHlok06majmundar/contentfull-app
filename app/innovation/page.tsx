@@ -34,10 +34,9 @@ export default function InnovationPage() {
         <div className={styles.container}>
           {/* Innovation Areas Section */}
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Innovation Areas</h2>
-            <p className={styles.sectionSubtitle}>
-              Discover the revolutionary technologies and methodologies we're exploring
-              to solve today's most complex challenges.
+            <h2 className={styles.sectionTitle}>Innovation Areas</h2>            <p className={styles.sectionSubtitle}>
+              Discover the revolutionary technologies and methodologies we&apos;re exploring
+              to solve today&apos;s most complex challenges.
             </p>
 
             <div className={styles.grid}>

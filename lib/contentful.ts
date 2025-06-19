@@ -19,7 +19,7 @@ export { client, graphqlClient };
 
 export const LANDING_PAGE_QUERY = `
   query GetLandingPage($slug: String!) {
-    pageCollection(where: { slug: $slug }, limit: 1) {
+    landingPageCollection(where: { slug: $slug }, limit: 1) {
       items {
         sys {
           id
@@ -78,7 +78,7 @@ export const LANDING_PAGE_QUERY = `
 
 export const ALL_LANDING_PAGES_QUERY = `
   query GetAllLandingPages {
-    pageCollection {
+    landingPageCollection {
       items {
         slug
       }
