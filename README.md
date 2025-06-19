@@ -236,6 +236,5 @@ For questions or issues, please open an issue on GitHub or contact the developme
 
 Current version: v1.0.0
 
-## 📄 License
 
 This project is licensed under the MIT License.
