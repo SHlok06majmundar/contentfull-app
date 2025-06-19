@@ -1,0 +1,177 @@
+.draggableComponent {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.draggableComponent:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.componentHeader {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e1e5e9;
+  gap: 12px;
+}
+
+.dragHandle {
+  cursor: grab;
+  color: #6b7280;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.dragHandle:hover {
+  color: #3b82f6;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.componentType {
+  flex: 1;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.removeButton:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.componentContent {
+  padding: 20px;
+}
+
+.heroPreview {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 6px;
+}
+
+.heroPreview h3 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.heroPreview p {
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.previewButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.previewButton:hover {
+  background: #2563eb;
+}
+
+.twoColumnPreview {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.leftColumn {
+  flex: 1;
+}
+
+.leftColumn h3 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.leftColumn p {
+  margin: 0 0 16px 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.rightColumn {
+  flex: 1;
+}
+
+.imagePlaceholder {
+  background: #f3f4f6;
+  border: 2px dashed #d1d5db;
+  border-radius: 6px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.gridPreview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.gridItem {
+  aspect-ratio: 1;
+}
+
+.gridItem .imagePlaceholder {
+  height: 100%;
+  min-height: 100px;
+}
+
+@media (max-width: 768px) {
+  .twoColumnPreview {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .componentContent {
+    padding: 16px;
+  }
+  
+  .heroPreview {
+    padding: 24px 16px;
+  }
+  
+  .heroPreview h3 {
+    font-size: 20px;
+  }
+  
+  .gridPreview {
+    gap: 12px;
+  }
+}
